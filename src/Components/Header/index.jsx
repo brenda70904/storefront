@@ -1,7 +1,8 @@
 const Header = () => {
   return (
     <>
-      <header> 401d51 Store Front </header>
+      <h1> 401d51 Our Store </h1>
+      <text>cart</text>
     </>
   )
 }

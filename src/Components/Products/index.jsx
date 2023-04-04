@@ -1,8 +1,24 @@
-const Products = () => {
-  return(
+import { Card } from "@mui/material";
+import { connect } from "react-redux";
+
+const Products = ({ products, activeCategory }) => {
+  return (
     <>
-    list of products
+      {
+        activeCategory && products.map((product, idx) => (
+          <Card key={`product-${idx}`} sx={{ minWidth: 275 }}>
+            {product.name}
+          </Card>
+        ))
+      }
     </>
   )
 }
-export default Products;
+
+const mapStateToProps = ({ store }) => {
+  return {
+    products: store.products,
+    activeCategory: store.activeCategory,
+  }
+}
+export default connect(mapStateToProps)(Products);
