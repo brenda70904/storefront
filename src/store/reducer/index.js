@@ -17,20 +17,39 @@ const initialState = {
 };
 
 function productsReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'ELECTRONICS':
+
+  const { type, payload } = action;
+
+  switch (type) {
+
+    case 'SELECT':
       return {
         ...state,
-        categories: state.categories.map(category => {
-          if (category.name === action.payload.name) {
-            return {
-              name: category.name,
-              displayName: category.displayName,
-            }
-          }
-          return category;
-        })
-
+        activeCategory: payload,
+        products: initialState.products.filter(product => product.category === payload.name),
       }
+    case 'RESET':
+      return initialState;
+
+    default:
+      return state;
   }
 }
+
+export const select = (category) => {
+  return {
+    type: 'SELECT',
+    payload: category,
+
+  }
+
+}
+
+export const reset = () => {
+  return {
+    type: 'RESET',
+  }
+}
+
+
+export default productsReducer;
