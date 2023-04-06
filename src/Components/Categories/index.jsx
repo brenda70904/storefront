@@ -1,9 +1,11 @@
 import { Button, ButtonGroup } from '@mui/material';
-import { connect } from 'react-redux';
-import { select } from '../../store/reducer';
+import { select } from '../../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
+const Categories = () => {
+  const { categories } = useSelector(state => state.categories);
+  const dispatch = useDispatch();
 
-const Categories = ({ categories, select }) => {
   return (
     <>
       <h2>Browse our Categories</h2>
@@ -12,7 +14,7 @@ const Categories = ({ categories, select }) => {
           categories.map((category, idx) => (
             <Button
               key={`category-${idx}`}
-              onClick={() => select(category)}
+              onClick={() => dispatch(select(category))}
             >
               {category.displayName}
             </Button>
@@ -23,17 +25,5 @@ const Categories = ({ categories, select }) => {
     </>
   )
 };
-// store is from the reducer -> /Users/jowb/Documents/401/storefront/src/store/index.js
-const mapStateToProps = ({ store }) => {
-  return {
-    categories: store.categories,
-  }
-}
-// step 1, import the action
-// step 2, create dispatch for the imported action
-const mapDispatchToProps = {
-  select,
-}
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default Categories;

@@ -14,8 +14,8 @@ Create a virtual store using redux.
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd]()
-- [back-end server url]()
+- [GitHub Actions ci/cd](https://github.com/brenda70904/storefront/actions)
+- [Front-end server url]()
 
 ### Collaborators
 
@@ -46,3 +46,4 @@ for now I have none and do not require one
 #### UML
 
 ![class-36](./assets/class-36.png)
+![class-37](./assets/class-37.png)
