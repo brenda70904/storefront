@@ -46,3 +46,4 @@ for now I have none and do not require one
 #### UML
 
 ![class-36](./assets/class-36.png)
+![class-37](./assets/class-37.png)
