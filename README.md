@@ -14,8 +14,8 @@ Create a virtual store using redux.
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd]()
-- [back-end server url]()
+- [GitHub Actions ci/cd](https://github.com/brenda70904/storefront/actions)
+- [Front-end server url]()
 
 ### Collaborators
 
